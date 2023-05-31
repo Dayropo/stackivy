@@ -1,13 +1,15 @@
-import { FiChevronDown } from "react-icons/fi"
+import { FiChevronDown, FiMenu, FiX } from "react-icons/fi"
 import { FaCaretDown } from "react-icons/fa"
 import { useState } from "react"
+import Menu from "./Menu"
 
 const Navbar = () => {
   const [page, setPage] = useState(null)
+  const [showMenu, setShowMenu] = useState(false)
 
   return (
-    <nav className="fixed top-0 h-16 w-full flex items-center justify-between bg-primary-100 text-white font-ubuntu px-24 z-50">
-      <div className="flex w-3/5 items-center justify-between">
+    <nav className="fixed top-0 h-16 w-full flex items-center justify-between bg-primary-100 text-white font-ubuntu xl:px-24 sm:px-12 px-6 z-50">
+      <div className="flex items-center xl:space-x-32 md:space-x-16">
         {/* logo */}
         <div className="flex items-center cursor-pointer">
           <img
@@ -18,7 +20,7 @@ const Navbar = () => {
         </div>
 
         {/* main navigation links */}
-        <ul className="flex w-3/5 items-center justify-between">
+        <ul className="lg:flex hidden items-center xl:space-x-12 md:space-x-6">
           <li
             className="cursor-pointer font-medium"
             onClick={() => setPage("products")}
@@ -84,7 +86,7 @@ const Navbar = () => {
         </ul>
       </div>
 
-      <div className="flex items-center">
+      <div className="lg:flex hidden items-center">
         <button className="py-2 px-6 font-medium hover:text-primary-300">
           Sign In
         </button>
@@ -103,6 +105,23 @@ const Navbar = () => {
 
           <FiChevronDown size={16} className="ml-0.5" />
         </div>
+      </div>
+
+      <div className="lg:hidden block relative">
+        {showMenu ? (
+          <FiX
+            size={24}
+            className="cursor-pointer"
+            onClick={() => setShowMenu(!showMenu)}
+          />
+        ) : (
+          <FiMenu
+            size={24}
+            className="cursor-pointer"
+            onClick={() => setShowMenu(!showMenu)}
+          />
+        )}
+        {showMenu && <Menu />}
       </div>
     </nav>
   )
