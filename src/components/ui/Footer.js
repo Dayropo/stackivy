@@ -9,9 +9,9 @@ const Footer = () => {
   return (
     <footer className=" text-white font-grotesk bg-white w-full">
       {/* download */}
-      <div className="w-full md:w-3/4 lg:w-3/5 md:rounded-xl md:mx-auto pt-10 lg:px-16 sm:px-12 px-8 md:-mb-24 relative bg-footer bg-cover bg-no-repeat bg-primary-300 flex">
-        <div className="w-1/2 sm:space-y-6 space-y-2 ">
-          <p className="lg:text-2xl sm:text-xl text-lg font-bold w-4/5">
+      <div className="w-full md:w-3/4 lg:w-3/5 md:rounded-xl md:mx-auto sm:pt-10 pt-6 lg:px-16 sm:px-12 px-8 md:-mb-24 relative bg-footer bg-cover bg-no-repeat bg-primary-300 flex">
+        <div className="w-1/2 sm:space-y-6 space-y-2 pb-4">
+          <p className="lg:text-2xl sm:text-xl text-sm font-bold sm:w-4/5 w-full">
             Download for free Start saving Today
           </p>
           <button className="sm:text-sm text-xs font-medium text-primary-300 bg-white rounded-md py-2.5 px-4">
